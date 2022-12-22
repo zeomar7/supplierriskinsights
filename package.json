@@ -1,0 +1,71 @@
+{
+  "name": "supplierriskinsights",
+  "version": "1.0.0",
+  "description": "Multi Target Application for Supplier Risk Information",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap-cloud-sdk/connectivity": "^2.12.0",
+    "@sap-cloud-sdk/util": "^2.12.0",
+    "@sap/cds": "^6",
+    "axios": "^1.2.1",
+    "express": "^4",
+    "hdb": "^0.19.0"
+  },
+  "devDependencies": {
+    "sqlite3": "^5.0.4"
+  },
+  "scripts": {
+    "start": "cds run"
+  },
+  "engines": {
+    "node": "^16.15"
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "env": {
+      "es2020": true,
+      "node": true,
+      "jest": true,
+      "mocha": true
+    },
+    "globals": {
+      "SELECT": true,
+      "INSERT": true,
+      "UPDATE": true,
+      "DELETE": true,
+      "CREATE": true,
+      "DROP": true,
+      "CDL": true,
+      "CQL": true,
+      "CXL": true,
+      "cds": true
+    },
+    "rules": {
+      "no-console": "off",
+      "require-atomic-updates": "off"
+    }
+  },
+  "cds": {
+    "requires": {
+      "[production]": {
+        "db": {
+          "kind": "hana",
+          "model": [
+            "db/",
+            "srv/"
+          ]
+        }
+      },
+      "auth": {
+        "kind": "xsuaa"
+      },
+      "hana": { 
+        "deploy-format": "hdbtable"
+      },
+      "db": {
+        "kind": "hana-cloud"
+      }
+    }
+  }
+}

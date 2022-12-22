@@ -1,0 +1,19 @@
+{
+    "[development]": {
+      "auth": {
+       "passport": {
+        "strategy": "mock",
+        "users": {
+          "joe.dutra@tester.sap.com": {
+           "password": "initial",
+           "ID": "riskviewer",
+           "userAttributes": {
+             "email": "joe.dutra@tester.sap.com"
+           },
+           "roles": ["SupplierRiskRun"]
+         }
+        }
+       }
+      }
+    }
+}
